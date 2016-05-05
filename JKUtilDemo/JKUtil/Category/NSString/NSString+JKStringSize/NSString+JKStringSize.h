@@ -1,0 +1,15 @@
+    //
+//  NSString+JKStringSize.h
+//  chat
+//
+//  Created by emerys on 16/3/10.
+//  Copyright © 2016年 Emerys. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface NSString (JKStringSize)
+
+-(CGSize)sizeWithSize:(CGSize)size font:(UIFont *)font;
+
+@end
