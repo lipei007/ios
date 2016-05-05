@@ -145,7 +145,6 @@
 				B89B8AF11CDB9EA00002E603 /* JKGifView */,
 				B89B8AF41CDB9EA00002E603 /* JKPortraitMoviePlayer */,
 				B89B8AFE1CDB9EA00002E603 /* JKShapeImage(聊天发送图片带小三角) */,
-				B89B8B011CDB9EA00002E603 /* 高德定位地图 */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -198,53 +197,6 @@
 				B89B8B001CDB9EA00002E603 /* JKShapeImage.m */,
 			);
 			path = "JKShapeImage(聊天发送图片带小三角)";
-			sourceTree = "<group>";
-		};
-		B89B8B011CDB9EA00002E603 /* 高德定位地图 */ = {
-			isa = PBXGroup;
-			children = (
-				B89B8B021CDB9EA00002E603 /* framework */,
-				B89B8B031CDB9EA00002E603 /* gaodeMap */,
-				B89B8B041CDB9EA00002E603 /* gaodeMapTests */,
-				B89B8B051CDB9EA00002E603 /* gaodeMapUITests */,
-				B89B8B061CDB9EA00002E603 /* systemLib */,
-			);
-			path = "高德定位地图";
-			sourceTree = "<group>";
-		};
-		B89B8B021CDB9EA00002E603 /* framework */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = framework;
-			sourceTree = "<group>";
-		};
-		B89B8B031CDB9EA00002E603 /* gaodeMap */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = gaodeMap;
-			sourceTree = "<group>";
-		};
-		B89B8B041CDB9EA00002E603 /* gaodeMapTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = gaodeMapTests;
-			sourceTree = "<group>";
-		};
-		B89B8B051CDB9EA00002E603 /* gaodeMapUITests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = gaodeMapUITests;
-			sourceTree = "<group>";
-		};
-		B89B8B061CDB9EA00002E603 /* systemLib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = systemLib;
 			sourceTree = "<group>";
 		};
 		B89B8B071CDB9EA00002E603 /* Category */ = {
