@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="msk-hv-IHj">
+                                <rect key="frame" x="50" y="220" width="500" height="2"/>
+                                <color key="backgroundColor" red="0.19671151041984558" green="0.92758440971374512" blue="0.90146368741989136" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="kEK-1v-PJo"/>
+                                </constraints>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOv-lz-f7t">
+                                <rect key="frame" x="58" y="322" width="30" height="30"/>
+                                <state key="normal" title="录音"/>
+                                <state key="selected" title="停止录音"/>
+                                <connections>
+                                    <action selector="recordButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oAE-yh-KXs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAS-Ek-Idr">
+                                <rect key="frame" x="499" y="322" width="30" height="30"/>
+                                <state key="normal" title="播放"/>
+                                <state key="selected" title="停止播放"/>
+                                <connections>
+                                    <action selector="playButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6jW-sC-Q4x"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="sAS-Ek-Idr" secondAttribute="trailing" constant="51" id="4fE-KQ-f9B"/>
+                            <constraint firstAttribute="trailing" secondItem="msk-hv-IHj" secondAttribute="trailing" constant="50" id="AbV-Iy-mkM"/>
+                            <constraint firstItem="msk-hv-IHj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="AdX-ch-kWM"/>
+                            <constraint firstItem="LOv-lz-f7t" firstAttribute="top" secondItem="msk-hv-IHj" secondAttribute="bottom" constant="100" id="DO6-SY-kdk"/>
+                            <constraint firstItem="LOv-lz-f7t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="38" id="b04-UR-mnz"/>
+                            <constraint firstItem="msk-hv-IHj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="200" id="hqW-9X-tgO"/>
+                            <constraint firstItem="sAS-Ek-Idr" firstAttribute="centerY" secondItem="LOv-lz-f7t" secondAttribute="centerY" id="rtB-zd-nNU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="meterLevel" destination="msk-hv-IHj" id="PmE-YV-gjH"/>
+                        <outlet property="playButton" destination="sAS-Ek-Idr" id="exq-9X-5Y1"/>
+                        <outlet property="recordButton" destination="LOv-lz-f7t" id="toN-ox-6lU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
