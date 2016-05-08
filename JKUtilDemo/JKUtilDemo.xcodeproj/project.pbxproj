@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B83981671CDF0926008A0808 /* NSObject+JKCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B83981641CDF0926008A0808 /* NSObject+JKCoder.m */; };
+		B83981681CDF0926008A0808 /* NSObject+JKKVCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B83981661CDF0926008A0808 /* NSObject+JKKVCExtension.m */; };
 		B89B8B291CDB9EA00002E603 /* JKCacheSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B89B8AF01CDB9EA00002E603 /* JKCacheSlider.m */; };
 		B89B8B2A1CDB9EA00002E603 /* JKGifView.m in Sources */ = {isa = PBXBuildFile; fileRef = B89B8AF31CDB9EA00002E603 /* JKGifView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B89B8B2B1CDB9EA00002E603 /* JKBackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B89B8AF61CDB9EA00002E603 /* JKBackButton.m */; };
@@ -52,6 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B83981631CDF0926008A0808 /* NSObject+JKCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JKCoder.h"; sourceTree = "<group>"; };
+		B83981641CDF0926008A0808 /* NSObject+JKCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JKCoder.m"; sourceTree = "<group>"; };
+		B83981651CDF0926008A0808 /* NSObject+JKKVCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JKKVCExtension.h"; sourceTree = "<group>"; };
+		B83981661CDF0926008A0808 /* NSObject+JKKVCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JKKVCExtension.m"; sourceTree = "<group>"; };
 		B89B8AEF1CDB9EA00002E603 /* JKCacheSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCacheSlider.h; sourceTree = "<group>"; };
 		B89B8AF01CDB9EA00002E603 /* JKCacheSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCacheSlider.m; sourceTree = "<group>"; };
 		B89B8AF21CDB9EA00002E603 /* JKGifView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKGifView.h; sourceTree = "<group>"; };
@@ -127,6 +133,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B83981621CDF0926008A0808 /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				B83981631CDF0926008A0808 /* NSObject+JKCoder.h */,
+				B83981641CDF0926008A0808 /* NSObject+JKCoder.m */,
+				B83981651CDF0926008A0808 /* NSObject+JKKVCExtension.h */,
+				B83981661CDF0926008A0808 /* NSObject+JKKVCExtension.m */,
+			);
+			path = NSObject;
+			sourceTree = "<group>";
+		};
 		B89B8AEC1CDB9EA00002E603 /* JKUtil */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +219,7 @@
 		B89B8B071CDB9EA00002E603 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				B83981621CDF0926008A0808 /* NSObject */,
 				B89B8B081CDB9EA00002E603 /* NSData */,
 				B89B8B0C1CDB9EA00002E603 /* NSString */,
 				B89B8B101CDB9EA00002E603 /* UIColor */,
@@ -540,6 +558,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B89B8B361CDB9EA00002E603 /* UIImage+GIF.m in Sources */,
+				B83981681CDF0926008A0808 /* NSObject+JKKVCExtension.m in Sources */,
 				B89B8B331CDB9EA00002E603 /* NSString+JKStringSize.m in Sources */,
 				B8AA18411CC776FE008D664E /* ViewController.m in Sources */,
 				B89B8B341CDB9EA00002E603 /* UIColor+JK_HEX.m in Sources */,
@@ -551,6 +570,7 @@
 				B89B8B291CDB9EA00002E603 /* JKCacheSlider.m in Sources */,
 				B8AA183B1CC776FE008D664E /* main.m in Sources */,
 				B89B8B2A1CDB9EA00002E603 /* JKGifView.m in Sources */,
+				B83981671CDF0926008A0808 /* NSObject+JKCoder.m in Sources */,
 				B89B8B2B1CDB9EA00002E603 /* JKBackButton.m in Sources */,
 				B89B8B351CDB9EA00002E603 /* UIImage+ColorImage.m in Sources */,
 				B89B8B321CDB9EA00002E603 /* NSData+JKImageType.m in Sources */,

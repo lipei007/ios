@@ -10,6 +10,9 @@
 #define JKUtil_h
 
 #import "JKCommon.h"
+// nsobject
+#import "NSObject+JKCoder.h"
+#import "NSObject+JKKVCExtension.h"
 // data
 #import "NSData+JKImageType.h"
 // string
