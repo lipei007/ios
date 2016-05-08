@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "UIDevice+JKCheckDeviece.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    BOOL available = [UIDevice cameraAvailable];
+    if (available) {
+        printf("yes\n");
+    } else {
+        printf("no\n");
+    }
 }
 
 - (void)didReceiveMemoryWarning {
