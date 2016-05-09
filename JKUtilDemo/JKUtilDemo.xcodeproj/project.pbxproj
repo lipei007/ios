@@ -34,6 +34,7 @@
 		B8AA18491CC776FE008D664E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AA18471CC776FE008D664E /* LaunchScreen.storyboard */; };
 		B8AA18541CC776FE008D664E /* JKUtilDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AA18531CC776FE008D664E /* JKUtilDemoTests.m */; };
 		B8AA185F1CC776FE008D664E /* JKUtilDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AA185E1CC776FE008D664E /* JKUtilDemoUITests.m */; };
+		B8CDF21F1CE0EE900054AA25 /* JKCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CDF21E1CE0EE900054AA25 /* JKCarouselView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,8 @@
 		B8AA185A1CC776FE008D664E /* JKUtilDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JKUtilDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8AA185E1CC776FE008D664E /* JKUtilDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKUtilDemoUITests.m; sourceTree = "<group>"; };
 		B8AA18601CC776FE008D664E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8CDF21D1CE0EE900054AA25 /* JKCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCarouselView.h; sourceTree = "<group>"; };
+		B8CDF21E1CE0EE900054AA25 /* JKCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCarouselView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +161,7 @@
 		B89B8AED1CDB9EA00002E603 /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
+				B8CDF21C1CE0EE900054AA25 /* JKCarouselView(轮播) */,
 				B89B8AEE1CDB9EA00002E603 /* JKCacheSlider */,
 				B89B8AF11CDB9EA00002E603 /* JKGifView */,
 				B89B8AF41CDB9EA00002E603 /* JKPortraitMoviePlayer */,
@@ -423,6 +427,15 @@
 			path = JKUtilDemoUITests;
 			sourceTree = "<group>";
 		};
+		B8CDF21C1CE0EE900054AA25 /* JKCarouselView(轮播) */ = {
+			isa = PBXGroup;
+			children = (
+				B8CDF21D1CE0EE900054AA25 /* JKCarouselView.h */,
+				B8CDF21E1CE0EE900054AA25 /* JKCarouselView.m */,
+			);
+			path = "JKCarouselView(轮播)";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -561,6 +574,7 @@
 				B83981681CDF0926008A0808 /* NSObject+JKKVCExtension.m in Sources */,
 				B89B8B331CDB9EA00002E603 /* NSString+JKStringSize.m in Sources */,
 				B8AA18411CC776FE008D664E /* ViewController.m in Sources */,
+				B8CDF21F1CE0EE900054AA25 /* JKCarouselView.m in Sources */,
 				B89B8B341CDB9EA00002E603 /* UIColor+JK_HEX.m in Sources */,
 				B8AA183E1CC776FE008D664E /* AppDelegate.m in Sources */,
 				B89B8B371CDB9EA00002E603 /* UIImage+JKSize.m in Sources */,
