@@ -17,6 +17,9 @@
 #endif
 
 #define JKLogMethodName NSLog(@"%s", __func__)
+#define JKLogPoint(var) (NSLog(@"X:%f,  Y:%f",var.x,var.y))
+#define JKLogSize(var) (NSLog(@"width:%f,   height:%f",var.width,var.height))
+#define JKLogRect(var) (NSLog(@"X:%f,   Y:%f,  width:%f,    height:%f",var.origin.x,var.origin.y,var.size.width,var.size.height))
 
 /**************************************颜色*******************************************************/
 // var 为0x开头十六进制数
