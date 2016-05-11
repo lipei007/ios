@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JKImageBrowser.h"
+
 
 @interface JKImageBrowserRootView : UIView
 
-+ (instancetype)browserRootViewWithFrame:(CGRect)frame images:(NSArray *)source operationButtonImage:(UIImage *)image;
+@property (nonatomic,strong) UIView *imageContainer;
+@property (nonatomic,copy) hideAnimationFinishBlock hideBlock;
 
-@property (nonatomic,assign) NSUInteger currentImageIndex;
++ (instancetype)browserRootViewWithFrame:(CGRect)frame images:(NSArray *)source currentImageIndex:(NSInteger)index operationButtonImage:(UIImage *)image;
 
-
+- (void)scaleAnimationToHideWithStartIndex:(NSInteger)index;
 
 @end

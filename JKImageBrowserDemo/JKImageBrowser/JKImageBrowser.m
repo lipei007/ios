@@ -8,11 +8,12 @@
 
 #import "JKImageBrowser.h"
 
-@interface JKImageBrowser ()<UIScrollViewDelegate>
+@interface JKImageBrowser ()<UIScrollViewDelegate,UIGestureRecognizerDelegate>
 
 @property (nonatomic,strong) UIImage *image;
 @property (nonatomic,strong) UIScrollView *zoomScrollView;
 @property (nonatomic,strong) UIImageView *zoomImageView;
+@property (nonatomic,assign) CGFloat totalScale;
 
 @end
 
@@ -21,7 +22,7 @@
 + (instancetype)browserWithFrame:(CGRect)frame image:(UIImage *)image{
     JKImageBrowser *browser = [[JKImageBrowser alloc] initWithFrame:frame];
     browser.image = image;
-    
+    browser.totalScale = 1.0f;
     [browser setupUserInterface];
     
     return browser;
@@ -41,8 +42,6 @@
         _zoomImageView.userInteractionEnabled = YES;
         _zoomImageView.image = self.image;
         
-        UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(imageViewPinch:)];
-        [_zoomImageView addGestureRecognizer:pinch];
     }
     return _zoomImageView;
 }
@@ -61,24 +60,70 @@
         _zoomScrollView.delegate = self;
         _zoomScrollView.contentSize = CGSizeMake(w, h);
         
+        _zoomScrollView.minimumZoomScale = 0.5;
+        _zoomScrollView.maximumZoomScale = 2;
+        
         self.zoomImageView.center = CGPointMake(self.bounds.size.width * 0.5, self.bounds.size.height * 0.5);
         [_zoomScrollView addSubview:self.zoomImageView];
-
+        
+        // 旋转手势(现在旋转后，缩放会将其复原)
+//        UIRotationGestureRecognizer *rotation = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotateImage:)];
+//        rotation.delegate = self;
+//        [_zoomScrollView addGestureRecognizer:rotation];
+        
     }
     return _zoomScrollView;
 }
 
-#pragma mark - pinch
-- (void)imageViewPinch:(UIPinchGestureRecognizer *)pinch{
-    self.zoomImageView.transform = CGAffineTransformScale(self.zoomImageView.transform, pinch.scale, pinch.scale);
-    CGSize siz = self.zoomScrollView.contentSize;
-    self.zoomScrollView.contentSize = CGSizeMake(siz.width * pinch.scale, siz.height * pinch.scale);
-    
-    CGFloat x = siz.width * pinch.scale < self.bounds.size.width ? self.bounds.size.width * 0.5 : siz.width * pinch.scale * 0.5;
-    CGFloat y = siz.height * pinch.scale < self.bounds.size.height ? self.bounds.size.height * 0.5 : siz.height * pinch.scale * 0.5;
+- (void)hideWithCenterScaleAnimation:(BOOL)centerAnimation {
+    if (centerAnimation) {
+        [UIView animateWithDuration:0.4 animations:^{
+            self.zoomImageView.transform = CGAffineTransformScale(self.zoomImageView.transform, 0.2, 0.2);
+        } completion:^(BOOL finished) {
+            if (self.hideBlock) {
+                self.hideBlock();
+            }
+        }];
+    } else {
+//        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        CGRect tmpRect = [self.imageContainer convertRect:self.imageContainer.bounds toView:self.imageContainer.window];
+
+        [UIView animateWithDuration:0.4 animations:^{
+            self.zoomImageView.frame = tmpRect;
+        } completion:^(BOOL finished) {
+            if (self.hideBlock) {
+                self.hideBlock();
+            }
+        }];
+    }
+}
+
+#pragma mark - gesture
+
+- (void)rotateImage:(UIRotationGestureRecognizer *)rotation {
+    CGFloat angle = rotation.rotation;
+    angle = angle > 0 ? M_PI_2 : -M_PI_2;
+    self.zoomImageView.transform = CGAffineTransformRotate(self.zoomImageView.transform, angle);
+    rotation.rotation = 0;
+}
+
+#pragma mark UIGestureRecognizerDelegate
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
+
+
+#pragma mark - UIScrollViewDelegate
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    return scrollView.subviews.lastObject;
+}
+
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView {
+    CGFloat x = scrollView.contentSize.width < CGRectGetWidth(scrollView.frame) ? CGRectGetWidth(scrollView.frame) * 0.5 : scrollView.contentSize.width * 0.5;
+    CGFloat y = scrollView.contentSize.height < CGRectGetHeight(scrollView.frame) ? CGRectGetHeight(scrollView.frame) * 0.5 : scrollView.contentSize.height * 0.5;
     self.zoomImageView.center = CGPointMake(x, y);
-    
-    pinch.scale = 1;
 }
 
 

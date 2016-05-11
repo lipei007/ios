@@ -10,4 +10,8 @@
 
 @implementation JKImageCache
 
+- (void)dealloc {
+    NSLog(@"cache dealloc");
+}
+
 @end

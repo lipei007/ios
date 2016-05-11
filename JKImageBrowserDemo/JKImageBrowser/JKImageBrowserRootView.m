@@ -7,7 +7,6 @@
 //
 
 #import "JKImageBrowserRootView.h"
-#import "JKImageBrowser.h"
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -19,16 +18,18 @@
 @property (nonatomic,strong) UILabel *indexLabel;
 @property (nonatomic,strong) UIButton *operationButton;
 @property (nonatomic,strong) UIScrollView *contentScrollView;
+@property (nonatomic,assign) NSUInteger currentImageIndex;
+
 
 @end
 
 @implementation JKImageBrowserRootView
 
-+ (instancetype)browserRootViewWithFrame:(CGRect)frame images:(NSArray *)source operationButtonImage:(UIImage *)image{
++ (instancetype)browserRootViewWithFrame:(CGRect)frame images:(NSArray *)source currentImageIndex:(NSInteger)index operationButtonImage:(UIImage *)image {
     JKImageBrowserRootView *rootView = [[JKImageBrowserRootView alloc] initWithFrame:frame];
     rootView.operationButtonImage = image;
     rootView.images = source;
-    
+    rootView.currentImageIndex = index;
     [rootView setupUserInterface];
     
     return rootView;
@@ -94,15 +95,24 @@
             JKImageBrowser *browser = [JKImageBrowser browserWithFrame:CGRectMake(self.bounds.size.width * i, 0, self.bounds.size.width, self.bounds.size.height) image:img];
             [_contentScrollView addSubview:browser];
         }
-        
+     
         _contentScrollView.contentOffset = CGPointMake(self.bounds.size.width * self.currentImageIndex, 0);
-        
+       
+       
     }
+    
     return _contentScrollView;
 }
 
 - (void)updateIndex {
     self.indexLabel.text = [NSString stringWithFormat:@"%li/%li",self.currentImageIndex + 1,self.images.count];
+}
+
+- (void)scaleAnimationToHideWithStartIndex:(NSInteger)index {
+    JKImageBrowser *browser = [self.contentScrollView.subviews objectAtIndex:self.currentImageIndex];
+    browser.imageContainer = self.imageContainer;
+    browser.hideBlock = self.hideBlock;
+    [browser hideWithCenterScaleAnimation:index != self.currentImageIndex];
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -112,6 +122,8 @@
     self.currentImageIndex = index;
     [self updateIndex];
 }
+
+#pragma mark - buttonClick
 
 - (void)operationButtonClicked:(UIButton *)sender{
     

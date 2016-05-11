@@ -9,9 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "JKImageCache.h"
 
-@interface JKImageBrowserViewController : UIViewController
+@interface JKImageBrowserViewController : UIView
 
-@property (nonatomic,strong) JKImageCache *imageCache;///<图片缓存(数据源)
 
+@property (nonatomic,strong) UIView *imageContainer;
+@property (nonatomic,assign) NSInteger touchedImageIndex;
+
+
+- (instancetype)initWithFrame:(CGRect)frame imageCache:(JKImageCache *)cache;
+
+- (void)show;
 
 @end
