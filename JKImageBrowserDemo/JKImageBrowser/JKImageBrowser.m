@@ -66,6 +66,7 @@
         self.zoomImageView.center = CGPointMake(self.bounds.size.width * 0.5, self.bounds.size.height * 0.5);
         [_zoomScrollView addSubview:self.zoomImageView];
         
+//        _zoomScrollView.contentInset = UIEdgeInsetsMake(0, 10, 0, 10);
         // 旋转手势(现在旋转后，缩放会将其复原)
 //        UIRotationGestureRecognizer *rotation = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotateImage:)];
 //        rotation.delegate = self;
@@ -98,6 +99,15 @@
     }
 }
 
+- (void)clearZoomState {
+    self.zoomImageView.transform = CGAffineTransformIdentity;
+    
+    CGFloat scale = self.image.size.width > self.bounds.size.width ? self.bounds.size.width / self.image.size.width : 1.0f;
+    CGFloat w = self.image.size.width * scale;
+    CGFloat h = self.image.size.height * scale;
+    self.zoomScrollView.contentSize = CGSizeMake(w, h);
+}
+
 #pragma mark - gesture
 
 - (void)rotateImage:(UIRotationGestureRecognizer *)rotation {
@@ -124,6 +134,7 @@
     CGFloat x = scrollView.contentSize.width < CGRectGetWidth(scrollView.frame) ? CGRectGetWidth(scrollView.frame) * 0.5 : scrollView.contentSize.width * 0.5;
     CGFloat y = scrollView.contentSize.height < CGRectGetHeight(scrollView.frame) ? CGRectGetHeight(scrollView.frame) * 0.5 : scrollView.contentSize.height * 0.5;
     self.zoomImageView.center = CGPointMake(x, y);
+    self.zooming = YES;
 }
 
 

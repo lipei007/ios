@@ -18,10 +18,14 @@ typedef void(^hideAnimationFinishBlock)(void);
 
 @property (nonatomic,strong) UIView *imageContainer;
 
+@property (nonatomic,assign) BOOL zooming;
+
 @property (nonatomic,copy) hideAnimationFinishBlock hideBlock;
 
 + (instancetype)browserWithFrame:(CGRect)frame image:(UIImage *)image;
 
 - (void)hideWithCenterScaleAnimation:(BOOL)centerAnimation;
+
+- (void)clearZoomState;
 
 @end

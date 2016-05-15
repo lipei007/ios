@@ -11,6 +11,7 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
+
 @interface JKImageBrowserRootView ()<UIScrollViewDelegate,UIActionSheetDelegate>
 
 @property (nonatomic,strong) NSArray *images;
@@ -121,6 +122,15 @@
     NSInteger index = scrollView.contentOffset.x / self.bounds.size.width;
     self.currentImageIndex = index;
     [self updateIndex];
+    
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    for (JKImageBrowser *browser in scrollView.subviews) {
+        if (browser.zooming) {
+            [browser clearZoomState];
+        }
+    }
 }
 
 #pragma mark - buttonClick
