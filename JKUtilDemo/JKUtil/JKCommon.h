@@ -9,12 +9,20 @@
 #ifndef JKCommon_h
 #define JKCommon_h
 
+
 /**************************************日志*******************************************************/
 #ifndef __OPTIMIZE__
 # define NSLog(...) NSLog(__VA_ARGS__)
 #else
 # define NSLog(...)
 #endif
+
+// ## 起连接作用
+#define JKWeak(type) __weak typeof(type) weak##type = type
+
+// # 的意思是为后面紧跟的标识符添加一个双引号""
+#define JKString(str) [NSString stringWithFormat:@"%@",@#str]
+#define JKMsg(str)  NSLog(@"%@",@#str)
 
 #define JKLogMethodName NSLog(@"%s", __func__)
 #define JKLogPoint(var) (NSLog(@"X:%f,  Y:%f",var.x,var.y))
