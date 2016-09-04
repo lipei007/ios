@@ -13,6 +13,8 @@ typedef void(^tapAction)(UIImage *);
 @interface JKCarouselView : UIView
 
 @property (nonatomic,assign) BOOL showsPageIndicator;
+@property (nonatomic,strong) UIScrollView *carousel;
+
 
 + (instancetype)carouselWithFrame:(CGRect)frame duration:(NSTimeInterval)duration contents:(NSArray<UIImage *> *)contents withTapAction:(tapAction)action;
 

@@ -9,11 +9,15 @@
 #import "ViewController.h"
 #import "JKCarouselScrollView.h"
 #import "JKCarouselView.h"
+#import "UIScrollView+JKContentImage.h"
+
 
 #define w ([UIScreen mainScreen].bounds.size.width)
 
 @interface ViewController ()
-
+{
+    JKCarouselView *carouselView;
+}
 @end
 
 @implementation ViewController
@@ -29,18 +33,30 @@
         [marray addObject:img];
     }
     
-    JKCarouselView *carousel = [JKCarouselView carouselWithFrame:CGRectMake(0, 50, w, 200) duration:8.0 contents:marray withTapAction:^(UIImage *img){
+    carouselView = [JKCarouselView carouselWithFrame:CGRectMake(0, 50, w, 200) duration:8.0 contents:marray withTapAction:^(UIImage *img){
         NSLog(@"img:%li",[marray indexOfObject:img]);
     }];
-    carousel.backgroundColor = [UIColor purpleColor];
-    [self.view addSubview:carousel];
-    carousel.showsPageIndicator = YES;
-    [carousel scroll];
+    carouselView.backgroundColor = [UIColor purpleColor];
+    [self.view addSubview:carouselView];
+    carouselView.showsPageIndicator = YES;
+    [carouselView scroll];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    UIImage *img = [carouselView.carousel jk_contentImageWithSavePath:@"/Users/emerys/Documents/img/s.png"];
+    if (img) {
+        NSData *data = UIImagePNGRepresentation(img);
+        [data writeToFile:@"/Users/emerys/Documents/img/shot.png" atomically:NO];
+    } else {
+        NSLog(@"error");
+    }
 }
 
 @end

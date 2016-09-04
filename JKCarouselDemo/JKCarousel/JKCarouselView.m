@@ -7,12 +7,12 @@
 //
 
 #import "JKCarouselView.h"
+#import "UIScrollView+JKContentImage.h"
 
 #define w ([UIScreen mainScreen].bounds.size.width)
 
 @interface JKCarouselView ()<UIScrollViewDelegate>
 
-@property (nonatomic,strong) UIScrollView *carousel;
 @property (nonatomic,strong) NSTimer *timer;
 @property (nonatomic,strong) UIPageControl *pageControl;
 @property (nonatomic,assign) NSTimeInterval duration;

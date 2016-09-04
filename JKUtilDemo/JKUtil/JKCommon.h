@@ -24,6 +24,9 @@
 #define JKString(str) [NSString stringWithFormat:@"%@",@#str]
 #define JKMsg(str)  NSLog(@"%@",@#str)
 
+#define JKLogLocation NSLog(@"\nFile:%@ \nLine:%d",[[NSString stringWithUTF8String:__FILE__] lastPathComponent],__LINE__)
+
+
 #define JKLogMethodName NSLog(@"%s", __func__)
 #define JKLogPoint(var) (NSLog(@"X:%f,  Y:%f",var.x,var.y))
 #define JKLogSize(var) (NSLog(@"width:%f,   height:%f",var.width,var.height))
@@ -45,6 +48,8 @@
                                                   alpha:(alp)]
 
 #define colorWithRGB(r,g,b) colorWithRGBAlpha(r,g,b,(1.0))
+
+#define JKRandomColor [UIColor colorWithRed:(rand() % 255) / 255.0 green:(rand() % 255) / 255.0 blue:(rand() % 255) / 255.0 alpha:1]
 
 /**************************************屏幕*******************************************************/
 #define JK_ScreenWidth ([UIScreen mainScreen].bounds.size.width)

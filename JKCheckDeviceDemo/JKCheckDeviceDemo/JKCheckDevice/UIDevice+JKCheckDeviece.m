@@ -45,7 +45,7 @@
 }
 
 + (BOOL)photoLibraryIsEmpty{
-    return [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary];
+    return ![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary];
 }
 
 + (BOOL)cameraFlashAvailable{

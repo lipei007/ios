@@ -14,6 +14,7 @@
 		B814B7591CE0A16C00F7F0F3 /* 004.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B814B7531CE0A16C00F7F0F3 /* 004.jpeg */; };
 		B814B75A1CE0A16C00F7F0F3 /* 005.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B814B7541CE0A16C00F7F0F3 /* 005.jpeg */; };
 		B814B75B1CE0A16C00F7F0F3 /* 006.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B814B7551CE0A16C00F7F0F3 /* 006.jpeg */; };
+		B84031881CEA275E002631A3 /* UIScrollView+JKContentImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B84031871CEA275E002631A3 /* UIScrollView+JKContentImage.m */; };
 		B8C400091CE0940E00A69144 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C400081CE0940E00A69144 /* main.m */; };
 		B8C4000C1CE0940E00A69144 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C4000B1CE0940E00A69144 /* AppDelegate.m */; };
 		B8C4000F1CE0940E00A69144 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C4000E1CE0940E00A69144 /* ViewController.m */; };
@@ -51,6 +52,8 @@
 		B814B7531CE0A16C00F7F0F3 /* 004.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 004.jpeg; sourceTree = "<group>"; };
 		B814B7541CE0A16C00F7F0F3 /* 005.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 005.jpeg; sourceTree = "<group>"; };
 		B814B7551CE0A16C00F7F0F3 /* 006.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 006.jpeg; sourceTree = "<group>"; };
+		B84031861CEA275E002631A3 /* UIScrollView+JKContentImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+JKContentImage.h"; sourceTree = "<group>"; };
+		B84031871CEA275E002631A3 /* UIScrollView+JKContentImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+JKContentImage.m"; sourceTree = "<group>"; };
 		B8C400041CE0940E00A69144 /* JKCarouselDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKCarouselDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8C400081CE0940E00A69144 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B8C4000A1CE0940E00A69144 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -131,6 +134,8 @@
 				B8C400151CE0940E00A69144 /* LaunchScreen.storyboard */,
 				B8C400181CE0940E00A69144 /* Info.plist */,
 				B8C400071CE0940E00A69144 /* Supporting Files */,
+				B84031861CEA275E002631A3 /* UIScrollView+JKContentImage.h */,
+				B84031871CEA275E002631A3 /* UIScrollView+JKContentImage.m */,
 			);
 			path = JKCarouselDemo;
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 			files = (
 				B8C4000F1CE0940E00A69144 /* ViewController.m in Sources */,
 				B8CDF21B1CE0DE860054AA25 /* JKCarouselView.m in Sources */,
+				B84031881CEA275E002631A3 /* UIScrollView+JKContentImage.m in Sources */,
 				B8C4000C1CE0940E00A69144 /* AppDelegate.m in Sources */,
 				B814B74E1CE0973C00F7F0F3 /* JKCarouselScrollView.m in Sources */,
 				B8C400091CE0940E00A69144 /* main.m in Sources */,

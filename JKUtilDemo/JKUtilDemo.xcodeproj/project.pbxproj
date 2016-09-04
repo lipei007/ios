@@ -34,7 +34,10 @@
 		B8AA18491CC776FE008D664E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AA18471CC776FE008D664E /* LaunchScreen.storyboard */; };
 		B8AA18541CC776FE008D664E /* JKUtilDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AA18531CC776FE008D664E /* JKUtilDemoTests.m */; };
 		B8AA185F1CC776FE008D664E /* JKUtilDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AA185E1CC776FE008D664E /* JKUtilDemoUITests.m */; };
-		B8CDF21F1CE0EE900054AA25 /* JKCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CDF21E1CE0EE900054AA25 /* JKCarouselView.m */; };
+		B8BEF30D1D7BC396005F42AB /* JKTimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BEF30C1D7BC396005F42AB /* JKTimerManager.m */; };
+		B8BEF3AB1D7C6EDC005F42AB /* JKCarouselCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BEF3A61D7C6EDC005F42AB /* JKCarouselCell.m */; };
+		B8BEF3AC1D7C6EDC005F42AB /* JKCarouselController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BEF3A81D7C6EDC005F42AB /* JKCarouselController.m */; };
+		B8BEF3AD1D7C6EDC005F42AB /* JKCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BEF3AA1D7C6EDC005F42AB /* JKCarouselView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,8 +110,14 @@
 		B8AA185A1CC776FE008D664E /* JKUtilDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JKUtilDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8AA185E1CC776FE008D664E /* JKUtilDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKUtilDemoUITests.m; sourceTree = "<group>"; };
 		B8AA18601CC776FE008D664E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B8CDF21D1CE0EE900054AA25 /* JKCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCarouselView.h; sourceTree = "<group>"; };
-		B8CDF21E1CE0EE900054AA25 /* JKCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCarouselView.m; sourceTree = "<group>"; };
+		B8BEF30B1D7BC396005F42AB /* JKTimerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKTimerManager.h; sourceTree = "<group>"; };
+		B8BEF30C1D7BC396005F42AB /* JKTimerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKTimerManager.m; sourceTree = "<group>"; };
+		B8BEF3A51D7C6EDC005F42AB /* JKCarouselCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCarouselCell.h; sourceTree = "<group>"; };
+		B8BEF3A61D7C6EDC005F42AB /* JKCarouselCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCarouselCell.m; sourceTree = "<group>"; };
+		B8BEF3A71D7C6EDC005F42AB /* JKCarouselController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCarouselController.h; sourceTree = "<group>"; };
+		B8BEF3A81D7C6EDC005F42AB /* JKCarouselController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCarouselController.m; sourceTree = "<group>"; };
+		B8BEF3A91D7C6EDC005F42AB /* JKCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCarouselView.h; sourceTree = "<group>"; };
+		B8BEF3AA1D7C6EDC005F42AB /* JKCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCarouselView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +170,8 @@
 		B89B8AED1CDB9EA00002E603 /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
-				B8CDF21C1CE0EE900054AA25 /* JKCarouselView(轮播) */,
+				B8BEF3A41D7C6EDC005F42AB /* JKCarousel */,
+				B8BEF30A1D7BC396005F42AB /* JKTimer */,
 				B89B8AEE1CDB9EA00002E603 /* JKCacheSlider */,
 				B89B8AF11CDB9EA00002E603 /* JKGifView */,
 				B89B8AF41CDB9EA00002E603 /* JKPortraitMoviePlayer */,
@@ -427,13 +437,26 @@
 			path = JKUtilDemoUITests;
 			sourceTree = "<group>";
 		};
-		B8CDF21C1CE0EE900054AA25 /* JKCarouselView(轮播) */ = {
+		B8BEF30A1D7BC396005F42AB /* JKTimer */ = {
 			isa = PBXGroup;
 			children = (
-				B8CDF21D1CE0EE900054AA25 /* JKCarouselView.h */,
-				B8CDF21E1CE0EE900054AA25 /* JKCarouselView.m */,
+				B8BEF30B1D7BC396005F42AB /* JKTimerManager.h */,
+				B8BEF30C1D7BC396005F42AB /* JKTimerManager.m */,
 			);
-			path = "JKCarouselView(轮播)";
+			path = JKTimer;
+			sourceTree = "<group>";
+		};
+		B8BEF3A41D7C6EDC005F42AB /* JKCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				B8BEF3A51D7C6EDC005F42AB /* JKCarouselCell.h */,
+				B8BEF3A61D7C6EDC005F42AB /* JKCarouselCell.m */,
+				B8BEF3A71D7C6EDC005F42AB /* JKCarouselController.h */,
+				B8BEF3A81D7C6EDC005F42AB /* JKCarouselController.m */,
+				B8BEF3A91D7C6EDC005F42AB /* JKCarouselView.h */,
+				B8BEF3AA1D7C6EDC005F42AB /* JKCarouselView.m */,
+			);
+			path = JKCarousel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -574,18 +597,21 @@
 				B83981681CDF0926008A0808 /* NSObject+JKKVCExtension.m in Sources */,
 				B89B8B331CDB9EA00002E603 /* NSString+JKStringSize.m in Sources */,
 				B8AA18411CC776FE008D664E /* ViewController.m in Sources */,
-				B8CDF21F1CE0EE900054AA25 /* JKCarouselView.m in Sources */,
 				B89B8B341CDB9EA00002E603 /* UIColor+JK_HEX.m in Sources */,
 				B8AA183E1CC776FE008D664E /* AppDelegate.m in Sources */,
 				B89B8B371CDB9EA00002E603 /* UIImage+JKSize.m in Sources */,
 				B89B8B381CDB9EA00002E603 /* UITableView+JK.m in Sources */,
+				B8BEF3AC1D7C6EDC005F42AB /* JKCarouselController.m in Sources */,
+				B8BEF3AD1D7C6EDC005F42AB /* JKCarouselView.m in Sources */,
 				B89B8B391CDB9EA00002E603 /* UIView+JKImage.m in Sources */,
 				B89B8B311CDB9EA00002E603 /* JKShapeImage.m in Sources */,
+				B8BEF3AB1D7C6EDC005F42AB /* JKCarouselCell.m in Sources */,
 				B89B8B291CDB9EA00002E603 /* JKCacheSlider.m in Sources */,
 				B8AA183B1CC776FE008D664E /* main.m in Sources */,
 				B89B8B2A1CDB9EA00002E603 /* JKGifView.m in Sources */,
 				B83981671CDF0926008A0808 /* NSObject+JKCoder.m in Sources */,
 				B89B8B2B1CDB9EA00002E603 /* JKBackButton.m in Sources */,
+				B8BEF30D1D7BC396005F42AB /* JKTimerManager.m in Sources */,
 				B89B8B351CDB9EA00002E603 /* UIImage+ColorImage.m in Sources */,
 				B89B8B321CDB9EA00002E603 /* NSData+JKImageType.m in Sources */,
 				B89B8B2C1CDB9EA00002E603 /* JKMoviePlayerPortraitViewController.m in Sources */,

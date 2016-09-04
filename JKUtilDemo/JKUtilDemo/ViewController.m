@@ -37,6 +37,8 @@
 //    JKMoviePlayerPortraitViewController *player = [[JKMoviePlayerPortraitViewController alloc] init];
 //    
 //    [self presentViewController:player animated:YES completion:nil];
+    
+    [self.view jk_imageWithSavePath:@"/Users/emerys/Documents/img/shot.png"];
 }
 
 @end

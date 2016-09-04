@@ -7,6 +7,7 @@
 //
 
 #import "JKCarouselScrollView.h"
+#import "UIScrollView+JKContentImage.h"
 
 #define w ([UIScreen mainScreen].bounds.size.width)
 

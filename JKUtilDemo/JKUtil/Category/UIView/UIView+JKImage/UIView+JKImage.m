@@ -15,7 +15,16 @@
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, self.layer.contentsScale);
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
-    
+    UIGraphicsEndImageContext();
+    return img;
+}
+
+- (UIImage *)jk_imageWithSavePath:(NSString *)path {
+    UIImage *img = [self jk_image];
+    if (path) {
+        NSData *data = UIImagePNGRepresentation(img);
+        [data writeToFile:path atomically:NO];
+    }
     return img;
 }
 

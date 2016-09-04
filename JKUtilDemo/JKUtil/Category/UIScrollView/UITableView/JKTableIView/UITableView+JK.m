@@ -17,7 +17,7 @@
 
 -(void)jk_registerHeaderFooterViewWithClass:(Class)headerFooterViewClass{
     NSString *identifier = NSStringFromClass(headerFooterViewClass);
-    [self registerClass:headerFooterViewClass forCellReuseIdentifier:identifier];
+    [self registerClass:headerFooterViewClass forHeaderFooterViewReuseIdentifier:identifier];
 }
 
 -(nullable __kindof UITableViewCell *)jk_dequeueReusableCellWithClass:(Class)cls{

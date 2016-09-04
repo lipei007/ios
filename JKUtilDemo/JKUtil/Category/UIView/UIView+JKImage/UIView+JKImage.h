@@ -19,4 +19,6 @@
  */
 - (UIImage *)jk_image;
 
+- (UIImage *)jk_imageWithSavePath:(NSString *)path;
+
 @end

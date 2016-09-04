@@ -21,17 +21,17 @@
     // Do any additional setup after loading the view, typically from a nib.
 
     
-    MyUIview *myView = [[MyUIview alloc] initWithFrame:CGRectMake(0, 0, 400, 800)];
-    myView.backgroundColor = [UIColor whiteColor];
-    
-    [self.view addSubview:myView];
-//
-//    GraphicView *gv = [[GraphicView alloc] init];
-//    gv.frame = self.view.bounds;
-//    gv.backgroundColor = [UIColor whiteColor];
+//    MyUIview *myView = [[MyUIview alloc] initWithFrame:CGRectMake(0, 0, 400, 800)];
+//    myView.backgroundColor = [UIColor whiteColor];
 //    
-//    [gv awakeFromNib];
-//    [self.view addSubview:gv];
+//    [self.view addSubview:myView];
+//
+    GraphicView *gv = [[GraphicView alloc] init];
+    gv.frame = self.view.bounds;
+    gv.backgroundColor = [UIColor whiteColor];
+    
+    [gv awakeFromNib];
+    [self.view addSubview:gv];
     
 
 
