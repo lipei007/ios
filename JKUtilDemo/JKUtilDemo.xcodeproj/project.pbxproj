@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42154C8821704158009918D5 /* NSString+JKMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 42154C8721704158009918D5 /* NSString+JKMD5.m */; };
+		42154C8C21704B9D009918D5 /* UIView+JKFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 42154C8B21704B9D009918D5 /* UIView+JKFrame.m */; };
+		42154C9021704F7E009918D5 /* NSString+JKAPP.m in Sources */ = {isa = PBXBuildFile; fileRef = 42154C8F21704F7E009918D5 /* NSString+JKAPP.m */; };
+		42154C94217069FE009918D5 /* NSString+JKValidate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42154C93217069FE009918D5 /* NSString+JKValidate.m */; };
+		42154C98217077F8009918D5 /* NSString+JKPinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 42154C97217077F8009918D5 /* NSString+JKPinyin.m */; };
 		B83981671CDF0926008A0808 /* NSObject+JKCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B83981641CDF0926008A0808 /* NSObject+JKCoder.m */; };
 		B83981681CDF0926008A0808 /* NSObject+JKKVCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B83981661CDF0926008A0808 /* NSObject+JKKVCExtension.m */; };
 		B89B8B291CDB9EA00002E603 /* JKCacheSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B89B8AF01CDB9EA00002E603 /* JKCacheSlider.m */; };
@@ -58,6 +63,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42154C8621704158009918D5 /* NSString+JKMD5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+JKMD5.h"; sourceTree = "<group>"; };
+		42154C8721704158009918D5 /* NSString+JKMD5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+JKMD5.m"; sourceTree = "<group>"; };
+		42154C8A21704B9D009918D5 /* UIView+JKFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+JKFrame.h"; sourceTree = "<group>"; };
+		42154C8B21704B9D009918D5 /* UIView+JKFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKFrame.m"; sourceTree = "<group>"; };
+		42154C8E21704F7E009918D5 /* NSString+JKAPP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+JKAPP.h"; sourceTree = "<group>"; };
+		42154C8F21704F7E009918D5 /* NSString+JKAPP.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+JKAPP.m"; sourceTree = "<group>"; };
+		42154C92217069FE009918D5 /* NSString+JKValidate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+JKValidate.h"; sourceTree = "<group>"; };
+		42154C93217069FE009918D5 /* NSString+JKValidate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+JKValidate.m"; sourceTree = "<group>"; };
+		42154C96217077F8009918D5 /* NSString+JKPinyin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+JKPinyin.h"; sourceTree = "<group>"; };
+		42154C97217077F8009918D5 /* NSString+JKPinyin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+JKPinyin.m"; sourceTree = "<group>"; };
 		B83981631CDF0926008A0808 /* NSObject+JKCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JKCoder.h"; sourceTree = "<group>"; };
 		B83981641CDF0926008A0808 /* NSObject+JKCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JKCoder.m"; sourceTree = "<group>"; };
 		B83981651CDF0926008A0808 /* NSObject+JKKVCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JKKVCExtension.h"; sourceTree = "<group>"; };
@@ -145,6 +160,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42154C852170413A009918D5 /* NSString+JKMD5 */ = {
+			isa = PBXGroup;
+			children = (
+				42154C8621704158009918D5 /* NSString+JKMD5.h */,
+				42154C8721704158009918D5 /* NSString+JKMD5.m */,
+			);
+			path = "NSString+JKMD5";
+			sourceTree = "<group>";
+		};
+		42154C8921704B5D009918D5 /* UIView+JKFrame */ = {
+			isa = PBXGroup;
+			children = (
+				42154C8A21704B9D009918D5 /* UIView+JKFrame.h */,
+				42154C8B21704B9D009918D5 /* UIView+JKFrame.m */,
+			);
+			path = "UIView+JKFrame";
+			sourceTree = "<group>";
+		};
+		42154C8D21704F61009918D5 /* NSString+JKAPP */ = {
+			isa = PBXGroup;
+			children = (
+				42154C8E21704F7E009918D5 /* NSString+JKAPP.h */,
+				42154C8F21704F7E009918D5 /* NSString+JKAPP.m */,
+			);
+			path = "NSString+JKAPP";
+			sourceTree = "<group>";
+		};
+		42154C91217069DE009918D5 /* NSString+JKValidate */ = {
+			isa = PBXGroup;
+			children = (
+				42154C92217069FE009918D5 /* NSString+JKValidate.h */,
+				42154C93217069FE009918D5 /* NSString+JKValidate.m */,
+			);
+			path = "NSString+JKValidate";
+			sourceTree = "<group>";
+		};
+		42154C95217077E5009918D5 /* NSString+JKPinyin */ = {
+			isa = PBXGroup;
+			children = (
+				42154C96217077F8009918D5 /* NSString+JKPinyin.h */,
+				42154C97217077F8009918D5 /* NSString+JKPinyin.m */,
+			);
+			path = "NSString+JKPinyin";
+			sourceTree = "<group>";
+		};
 		B83981621CDF0926008A0808 /* NSObject */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +324,10 @@
 		B89B8B0C1CDB9EA00002E603 /* NSString */ = {
 			isa = PBXGroup;
 			children = (
+				42154C95217077E5009918D5 /* NSString+JKPinyin */,
+				42154C91217069DE009918D5 /* NSString+JKValidate */,
+				42154C8D21704F61009918D5 /* NSString+JKAPP */,
+				42154C852170413A009918D5 /* NSString+JKMD5 */,
 				B89B8B0D1CDB9EA00002E603 /* NSString+JKStringSize */,
 			);
 			path = NSString;
@@ -360,6 +424,7 @@
 		B89B8B231CDB9EA00002E603 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				42154C8921704B5D009918D5 /* UIView+JKFrame */,
 				B89B8B241CDB9EA00002E603 /* UIView+JKImage */,
 			);
 			path = UIView;
@@ -599,6 +664,7 @@
 				B8AA18411CC776FE008D664E /* ViewController.m in Sources */,
 				B89B8B341CDB9EA00002E603 /* UIColor+JK_HEX.m in Sources */,
 				B8AA183E1CC776FE008D664E /* AppDelegate.m in Sources */,
+				42154C8821704158009918D5 /* NSString+JKMD5.m in Sources */,
 				B89B8B371CDB9EA00002E603 /* UIImage+JKSize.m in Sources */,
 				B89B8B381CDB9EA00002E603 /* UITableView+JK.m in Sources */,
 				B8BEF3AC1D7C6EDC005F42AB /* JKCarouselController.m in Sources */,
@@ -606,15 +672,19 @@
 				B89B8B391CDB9EA00002E603 /* UIView+JKImage.m in Sources */,
 				B89B8B311CDB9EA00002E603 /* JKShapeImage.m in Sources */,
 				B8BEF3AB1D7C6EDC005F42AB /* JKCarouselCell.m in Sources */,
+				42154C9021704F7E009918D5 /* NSString+JKAPP.m in Sources */,
 				B89B8B291CDB9EA00002E603 /* JKCacheSlider.m in Sources */,
 				B8AA183B1CC776FE008D664E /* main.m in Sources */,
 				B89B8B2A1CDB9EA00002E603 /* JKGifView.m in Sources */,
 				B83981671CDF0926008A0808 /* NSObject+JKCoder.m in Sources */,
 				B89B8B2B1CDB9EA00002E603 /* JKBackButton.m in Sources */,
+				42154C94217069FE009918D5 /* NSString+JKValidate.m in Sources */,
 				B8BEF30D1D7BC396005F42AB /* JKTimerManager.m in Sources */,
 				B89B8B351CDB9EA00002E603 /* UIImage+ColorImage.m in Sources */,
+				42154C98217077F8009918D5 /* NSString+JKPinyin.m in Sources */,
 				B89B8B321CDB9EA00002E603 /* NSData+JKImageType.m in Sources */,
 				B89B8B2C1CDB9EA00002E603 /* JKMoviePlayerPortraitViewController.m in Sources */,
+				42154C8C21704B9D009918D5 /* UIView+JKFrame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

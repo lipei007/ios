@@ -24,6 +24,8 @@
     cacheSlider.cacheValue = 0.5;
     
     [self.view addSubview:cacheSlider];
+    
+    NSLog(@"Pinyin:\n%@",[@"王老五" chinesePinyinWithCase:JKStringCaseCapitalized Diacritics:YES]);
 }
 
 - (void)didReceiveMemoryWarning {

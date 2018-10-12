@@ -17,6 +17,10 @@
 #import "NSData+JKImageType.h"
 // string
 #import "NSString+JKStringSize.h"
+#import "NSString+JKMD5.h"
+#import "NSString+JKAPP.h"
+#import "NSString+JKValidate.h"
+#import "NSString+JKPinyin.h"
 // image
 #import "UIImage+GIF.h"
 #import "UIImage+JKSize.h"
@@ -27,6 +31,7 @@
 #import "UIColor+JK_HEX.h"
 // uiview
 #import "UIView+JKImage.h"
+#import "UIView+JKFrame.h"
 
 // baseClass
 #import "JKShapeImage.h"
