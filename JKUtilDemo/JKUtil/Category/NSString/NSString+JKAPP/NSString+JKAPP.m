@@ -39,4 +39,26 @@
     return bundleName;
 }
 
+#pragma mark - Dir
+
++ (NSString *)bundlePath {
+    return [[NSBundle mainBundle] bundlePath];
+}
+
++ (NSString *)libraryDir {
+    return [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];
+}
+
++ (NSString *)cacheDir {
+    return [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+}
+
++ (NSString *)documentDir {
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+}
+
++ (NSString *)tmpDir {
+    return NSTemporaryDirectory();
+}
+
 @end
