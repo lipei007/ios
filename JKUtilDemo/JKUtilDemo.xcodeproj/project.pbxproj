@@ -12,6 +12,7 @@
 		42154C9021704F7E009918D5 /* NSString+JKAPP.m in Sources */ = {isa = PBXBuildFile; fileRef = 42154C8F21704F7E009918D5 /* NSString+JKAPP.m */; };
 		42154C94217069FE009918D5 /* NSString+JKValidate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42154C93217069FE009918D5 /* NSString+JKValidate.m */; };
 		42154C98217077F8009918D5 /* NSString+JKPinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 42154C97217077F8009918D5 /* NSString+JKPinyin.m */; };
+		42F7E80E219139EE0075BBB4 /* NSFileManager+JKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F7E80D219139EE0075BBB4 /* NSFileManager+JKExtension.m */; };
 		B83981671CDF0926008A0808 /* NSObject+JKCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B83981641CDF0926008A0808 /* NSObject+JKCoder.m */; };
 		B83981681CDF0926008A0808 /* NSObject+JKKVCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B83981661CDF0926008A0808 /* NSObject+JKKVCExtension.m */; };
 		B89B8B291CDB9EA00002E603 /* JKCacheSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B89B8AF01CDB9EA00002E603 /* JKCacheSlider.m */; };
@@ -73,6 +74,8 @@
 		42154C93217069FE009918D5 /* NSString+JKValidate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+JKValidate.m"; sourceTree = "<group>"; };
 		42154C96217077F8009918D5 /* NSString+JKPinyin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+JKPinyin.h"; sourceTree = "<group>"; };
 		42154C97217077F8009918D5 /* NSString+JKPinyin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+JKPinyin.m"; sourceTree = "<group>"; };
+		42F7E80C219139EE0075BBB4 /* NSFileManager+JKExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+JKExtension.h"; sourceTree = "<group>"; };
+		42F7E80D219139EE0075BBB4 /* NSFileManager+JKExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+JKExtension.m"; sourceTree = "<group>"; };
 		B83981631CDF0926008A0808 /* NSObject+JKCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JKCoder.h"; sourceTree = "<group>"; };
 		B83981641CDF0926008A0808 /* NSObject+JKCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JKCoder.m"; sourceTree = "<group>"; };
 		B83981651CDF0926008A0808 /* NSObject+JKKVCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JKKVCExtension.h"; sourceTree = "<group>"; };
@@ -205,6 +208,15 @@
 			path = "NSString+JKPinyin";
 			sourceTree = "<group>";
 		};
+		42F7E80B219139AB0075BBB4 /* NSFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				42F7E80C219139EE0075BBB4 /* NSFileManager+JKExtension.h */,
+				42F7E80D219139EE0075BBB4 /* NSFileManager+JKExtension.m */,
+			);
+			path = NSFileManager;
+			sourceTree = "<group>";
+		};
 		B83981621CDF0926008A0808 /* NSObject */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +305,7 @@
 		B89B8B071CDB9EA00002E603 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				42F7E80B219139AB0075BBB4 /* NSFileManager */,
 				B83981621CDF0926008A0808 /* NSObject */,
 				B89B8B081CDB9EA00002E603 /* NSData */,
 				B89B8B0C1CDB9EA00002E603 /* NSString */,
@@ -673,6 +686,7 @@
 				B89B8B311CDB9EA00002E603 /* JKShapeImage.m in Sources */,
 				B8BEF3AB1D7C6EDC005F42AB /* JKCarouselCell.m in Sources */,
 				42154C9021704F7E009918D5 /* NSString+JKAPP.m in Sources */,
+				42F7E80E219139EE0075BBB4 /* NSFileManager+JKExtension.m in Sources */,
 				B89B8B291CDB9EA00002E603 /* JKCacheSlider.m in Sources */,
 				B8AA183B1CC776FE008D664E /* main.m in Sources */,
 				B89B8B2A1CDB9EA00002E603 /* JKGifView.m in Sources */,
