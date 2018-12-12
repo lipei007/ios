@@ -12,6 +12,7 @@
 		42154C9021704F7E009918D5 /* NSString+JKAPP.m in Sources */ = {isa = PBXBuildFile; fileRef = 42154C8F21704F7E009918D5 /* NSString+JKAPP.m */; };
 		42154C94217069FE009918D5 /* NSString+JKValidate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42154C93217069FE009918D5 /* NSString+JKValidate.m */; };
 		42154C98217077F8009918D5 /* NSString+JKPinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 42154C97217077F8009918D5 /* NSString+JKPinyin.m */; };
+		422277C821C0D8C600F2EC41 /* UIView+JKConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 422277C721C0D8C600F2EC41 /* UIView+JKConstraint.m */; };
 		4255239921BBB56F009C0BCA /* UIImage+JKOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4255239821BBB56F009C0BCA /* UIImage+JKOrientation.m */; };
 		42F7E80E219139EE0075BBB4 /* NSFileManager+JKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F7E80D219139EE0075BBB4 /* NSFileManager+JKExtension.m */; };
 		B83981671CDF0926008A0808 /* NSObject+JKCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B83981641CDF0926008A0808 /* NSObject+JKCoder.m */; };
@@ -75,6 +76,8 @@
 		42154C93217069FE009918D5 /* NSString+JKValidate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+JKValidate.m"; sourceTree = "<group>"; };
 		42154C96217077F8009918D5 /* NSString+JKPinyin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+JKPinyin.h"; sourceTree = "<group>"; };
 		42154C97217077F8009918D5 /* NSString+JKPinyin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+JKPinyin.m"; sourceTree = "<group>"; };
+		422277C621C0D8C600F2EC41 /* UIView+JKConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKConstraint.h"; sourceTree = "<group>"; };
+		422277C721C0D8C600F2EC41 /* UIView+JKConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKConstraint.m"; sourceTree = "<group>"; };
 		4255239721BBB56F009C0BCA /* UIImage+JKOrientation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+JKOrientation.h"; sourceTree = "<group>"; };
 		4255239821BBB56F009C0BCA /* UIImage+JKOrientation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JKOrientation.m"; sourceTree = "<group>"; };
 		42F7E80C219139EE0075BBB4 /* NSFileManager+JKExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+JKExtension.h"; sourceTree = "<group>"; };
@@ -209,6 +212,15 @@
 				42154C97217077F8009918D5 /* NSString+JKPinyin.m */,
 			);
 			path = "NSString+JKPinyin";
+			sourceTree = "<group>";
+		};
+		422277C521C0D88F00F2EC41 /* UIView+JKConstraint */ = {
+			isa = PBXGroup;
+			children = (
+				422277C621C0D8C600F2EC41 /* UIView+JKConstraint.h */,
+				422277C721C0D8C600F2EC41 /* UIView+JKConstraint.m */,
+			);
+			path = "UIView+JKConstraint";
 			sourceTree = "<group>";
 		};
 		4255239621BBB548009C0BCA /* UIImage+Orientation */ = {
@@ -450,6 +462,7 @@
 		B89B8B231CDB9EA00002E603 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				422277C521C0D88F00F2EC41 /* UIView+JKConstraint */,
 				42154C8921704B5D009918D5 /* UIView+JKFrame */,
 				B89B8B241CDB9EA00002E603 /* UIView+JKImage */,
 			);
@@ -690,6 +703,7 @@
 				B8AA18411CC776FE008D664E /* ViewController.m in Sources */,
 				B89B8B341CDB9EA00002E603 /* UIColor+JK_HEX.m in Sources */,
 				B8AA183E1CC776FE008D664E /* AppDelegate.m in Sources */,
+				422277C821C0D8C600F2EC41 /* UIView+JKConstraint.m in Sources */,
 				42154C8821704158009918D5 /* NSString+JKMD5.m in Sources */,
 				B89B8B371CDB9EA00002E603 /* UIImage+JKSize.m in Sources */,
 				B89B8B381CDB9EA00002E603 /* UITableView+JK.m in Sources */,
