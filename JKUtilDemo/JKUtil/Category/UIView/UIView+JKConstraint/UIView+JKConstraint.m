@@ -36,6 +36,8 @@
 @property (nonatomic,copy) JKConstraint *(^jk_p_size_greaterThanOrEqualTo)(CGFloat size);
 @property (nonatomic,copy) JKConstraint *(^jk_p_size_lessThanOrEqualTo)(CGFloat size);
 
+@property (nonatomic,copy) void (^jk_p_modify)(CGFloat constant);
+
 @end
 
 @implementation JKConstraint
@@ -142,6 +144,19 @@
             
             return weakSelf;
         } copy];
+        
+        self.jk_p_modify = [^(CGFloat constant) {
+            
+            weakSelf.constant = constant;
+            if (weakSelf.constraint) {
+                weakSelf.constraint.constant = constant;
+                if ([weakSelf appliedViewIsView]) {
+                    UIView *appliedView = ((UIView *)weakSelf.appliedView);
+                    [appliedView.superview layoutIfNeeded];
+                }
+            }
+            
+        } copy];
     }
     return self;
 }
@@ -178,6 +193,10 @@
     return self.jk_p_size_greaterThanOrEqualTo;
 }
 
+- (void (^)(CGFloat))jk_modify {
+    return self.jk_p_modify;
+}
+
 - (void)jk_uninstall {
     
     if (self.appliedView && self.appliedViewIsView && self.validate && self.constraint) {
@@ -199,6 +218,7 @@
     
     self.validate = NO;
     self.constraint = nil;
+    self.identifier = nil;
     
     self.toView = nil;
     self.relation = NSLayoutRelationEqual;
@@ -223,6 +243,7 @@
                                                                        constant:self.constant];
         self.constraint = constraint;
         self.constraint.priority = self.priority;
+        self.constraint.identifier = self.identifier;
         
         if ((self.attribute == NSLayoutAttributeWidth || self.attribute == NSLayoutAttributeHeight) && !self.toView) {
             [appliedView addConstraint:self.constraint];
@@ -274,6 +295,8 @@
 
 @property (nonatomic,strong) NSMutableArray<JKConstraint *> *constraints;
 
+@property (nonatomic,copy) void (^jk_modifyConstraint)(NSString *identifier, CGFloat constant);
+
 @end
 
 @implementation JKConstraintMaker
@@ -292,8 +315,50 @@
                                                 self.width,
                                                 self.height
                                                 ]];
+        
+        __weak typeof(self) weakSelf = self;
+        self.jk_modifyConstraint = [^(NSString *identifier, CGFloat constant) {
+            
+            NSDictionary *constraintRes = [weakSelf findConstraintOfView:weakSelf.appliedView byIdentifier:identifier];
+            if (constraintRes) {
+                
+                UIView *view = constraintRes[@"view"];
+                NSLayoutConstraint *constraint = constraintRes[@"constraint"];
+                
+                constraint.constant = constant;
+                [view layoutIfNeeded];
+            }
+            
+        } copy];
     }
     return self;
+}
+
+- (NSDictionary *)findConstraintOfView:(UIView *)view byIdentifier:(NSString *)identifier {
+    if (!view || !identifier) {
+        return nil;
+    }
+    NSLayoutConstraint *result = nil;
+    
+    NSArray<NSLayoutConstraint *> *constraintArray = view.constraints;
+    for (NSLayoutConstraint *constraint in constraintArray) {
+        if (constraint.identifier && [constraint.identifier isEqualToString:identifier]) {
+            result = constraint;
+            break;
+        }
+    }
+    if (result) {
+        return @{
+                 @"view" : view,
+                 @"constraint" : result
+                 };
+    } else {
+        if (view.superview) {
+            return [self findConstraintOfView:view.superview byIdentifier:identifier];
+        } else {
+            return nil;
+        }
+    }
 }
 
 - (NSMutableArray<JKConstraint *> *)constraints {
@@ -550,6 +615,12 @@ static const char JKMaker = '\a';
 
 - (JKConstraint *)jk_safeAreaBottom {
     return [self JK_Maker].jk_safeAreaBottom;
+}
+
+// modify
+
+- (void (^)(NSString *, CGFloat))jk_modifyConstraint {
+    return [self JK_Maker].jk_modifyConstraint;
 }
 
 @end

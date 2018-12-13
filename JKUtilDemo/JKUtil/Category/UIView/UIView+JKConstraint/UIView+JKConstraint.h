@@ -20,6 +20,8 @@
 @property (nonatomic,copy) JKConstraint *(^jk_size_greaterThanOrEqualTo)(CGFloat size);
 @property (nonatomic,copy) JKConstraint *(^jk_size_lessThanOrEqualTo)(CGFloat size);
 
+@property (nonatomic,readonly,copy) void (^jk_modify)(CGFloat constant);
+
 @end
 
 #pragma mark - Maker
@@ -61,6 +63,8 @@
 @property (nonatomic,strong,readonly) JKConstraint *jk_safeAreaTop API_AVAILABLE(ios(11.0),tvos(11.0));
 @property (nonatomic,strong,readonly) JKConstraint *jk_safeAreaRight API_AVAILABLE(ios(11.0),tvos(11.0));
 @property (nonatomic,strong,readonly) JKConstraint *jk_safeAreaBottom API_AVAILABLE(ios(11.0),tvos(11.0));
+
+@property (nonatomic,copy,readonly) void (^jk_modifyConstraint)(NSString *identifier, CGFloat constant);
 
 - (void)jk_applyConstraints:(void(^)(JKConstraintMaker *maker))apply;
 
