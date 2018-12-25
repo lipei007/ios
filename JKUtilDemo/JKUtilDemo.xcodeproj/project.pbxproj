@@ -13,6 +13,9 @@
 		42154C94217069FE009918D5 /* NSString+JKValidate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42154C93217069FE009918D5 /* NSString+JKValidate.m */; };
 		42154C98217077F8009918D5 /* NSString+JKPinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 42154C97217077F8009918D5 /* NSString+JKPinyin.m */; };
 		422277C821C0D8C600F2EC41 /* UIView+JKConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 422277C721C0D8C600F2EC41 /* UIView+JKConstraint.m */; };
+		423CC86721D212F5008BD2C4 /* JKContactManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 423CC86321D212F5008BD2C4 /* JKContactManager.m */; };
+		423CC86821D212F5008BD2C4 /* CNMutableContact+JKContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 423CC86421D212F5008BD2C4 /* CNMutableContact+JKContact.m */; };
+		423CC86921D212F5008BD2C4 /* CNContact+JKContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 423CC86521D212F5008BD2C4 /* CNContact+JKContact.m */; };
 		4255239921BBB56F009C0BCA /* UIImage+JKOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4255239821BBB56F009C0BCA /* UIImage+JKOrientation.m */; };
 		42F7E80E219139EE0075BBB4 /* NSFileManager+JKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F7E80D219139EE0075BBB4 /* NSFileManager+JKExtension.m */; };
 		B83981671CDF0926008A0808 /* NSObject+JKCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B83981641CDF0926008A0808 /* NSObject+JKCoder.m */; };
@@ -78,6 +81,12 @@
 		42154C97217077F8009918D5 /* NSString+JKPinyin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+JKPinyin.m"; sourceTree = "<group>"; };
 		422277C621C0D8C600F2EC41 /* UIView+JKConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKConstraint.h"; sourceTree = "<group>"; };
 		422277C721C0D8C600F2EC41 /* UIView+JKConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKConstraint.m"; sourceTree = "<group>"; };
+		423CC86121D212F5008BD2C4 /* CNContact+JKContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CNContact+JKContact.h"; sourceTree = "<group>"; };
+		423CC86221D212F5008BD2C4 /* CNMutableContact+JKContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CNMutableContact+JKContact.h"; sourceTree = "<group>"; };
+		423CC86321D212F5008BD2C4 /* JKContactManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKContactManager.m; sourceTree = "<group>"; };
+		423CC86421D212F5008BD2C4 /* CNMutableContact+JKContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CNMutableContact+JKContact.m"; sourceTree = "<group>"; };
+		423CC86521D212F5008BD2C4 /* CNContact+JKContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CNContact+JKContact.m"; sourceTree = "<group>"; };
+		423CC86621D212F5008BD2C4 /* JKContactManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKContactManager.h; sourceTree = "<group>"; };
 		4255239721BBB56F009C0BCA /* UIImage+JKOrientation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+JKOrientation.h"; sourceTree = "<group>"; };
 		4255239821BBB56F009C0BCA /* UIImage+JKOrientation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JKOrientation.m"; sourceTree = "<group>"; };
 		42F7E80C219139EE0075BBB4 /* NSFileManager+JKExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+JKExtension.h"; sourceTree = "<group>"; };
@@ -223,6 +232,19 @@
 			path = "UIView+JKConstraint";
 			sourceTree = "<group>";
 		};
+		423CC86021D212F5008BD2C4 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				423CC86121D212F5008BD2C4 /* CNContact+JKContact.h */,
+				423CC86521D212F5008BD2C4 /* CNContact+JKContact.m */,
+				423CC86221D212F5008BD2C4 /* CNMutableContact+JKContact.h */,
+				423CC86421D212F5008BD2C4 /* CNMutableContact+JKContact.m */,
+				423CC86621D212F5008BD2C4 /* JKContactManager.h */,
+				423CC86321D212F5008BD2C4 /* JKContactManager.m */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
 		4255239621BBB548009C0BCA /* UIImage+Orientation */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +288,7 @@
 		B89B8AED1CDB9EA00002E603 /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
+				423CC86021D212F5008BD2C4 /* Contact */,
 				B8BEF3A41D7C6EDC005F42AB /* JKCarousel */,
 				B8BEF30A1D7BC396005F42AB /* JKTimer */,
 				B89B8AEE1CDB9EA00002E603 /* JKCacheSlider */,
@@ -702,15 +725,18 @@
 				B89B8B331CDB9EA00002E603 /* NSString+JKStringSize.m in Sources */,
 				B8AA18411CC776FE008D664E /* ViewController.m in Sources */,
 				B89B8B341CDB9EA00002E603 /* UIColor+JK_HEX.m in Sources */,
+				423CC86921D212F5008BD2C4 /* CNContact+JKContact.m in Sources */,
 				B8AA183E1CC776FE008D664E /* AppDelegate.m in Sources */,
 				422277C821C0D8C600F2EC41 /* UIView+JKConstraint.m in Sources */,
 				42154C8821704158009918D5 /* NSString+JKMD5.m in Sources */,
 				B89B8B371CDB9EA00002E603 /* UIImage+JKSize.m in Sources */,
 				B89B8B381CDB9EA00002E603 /* UITableView+JK.m in Sources */,
+				423CC86821D212F5008BD2C4 /* CNMutableContact+JKContact.m in Sources */,
 				B8BEF3AC1D7C6EDC005F42AB /* JKCarouselController.m in Sources */,
 				B8BEF3AD1D7C6EDC005F42AB /* JKCarouselView.m in Sources */,
 				B89B8B391CDB9EA00002E603 /* UIView+JKImage.m in Sources */,
 				B89B8B311CDB9EA00002E603 /* JKShapeImage.m in Sources */,
+				423CC86721D212F5008BD2C4 /* JKContactManager.m in Sources */,
 				B8BEF3AB1D7C6EDC005F42AB /* JKCarouselCell.m in Sources */,
 				42154C9021704F7E009918D5 /* NSString+JKAPP.m in Sources */,
 				42F7E80E219139EE0075BBB4 /* NSFileManager+JKExtension.m in Sources */,
