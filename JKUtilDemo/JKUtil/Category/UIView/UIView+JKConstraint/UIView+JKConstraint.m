@@ -299,6 +299,8 @@
 
 @end
 
+static const UILayoutPriority kJKLayoutPriorityNone = -1;
+
 @implementation JKConstraintMaker
 
 - (instancetype)initWithAppliedView:(UIView *)view {
@@ -315,6 +317,12 @@
                                                 self.width,
                                                 self.height
                                                 ]];
+        
+        self.jk_horizontalHuggingPriority = kJKLayoutPriorityNone;
+        self.jk_verticalHuggingPriority = kJKLayoutPriorityNone;
+        
+        self.jk_horizontalCompressionResistancePriority = kJKLayoutPriorityNone;
+        self.jk_verticalCompressionResistancePriority = kJKLayoutPriorityNone;
         
         __weak typeof(self) weakSelf = self;
         self.jk_modifyConstraint = [^(NSString *identifier, CGFloat constant) {
@@ -490,6 +498,25 @@
 - (void)jk_install {
     if (self.appliedView) {
         
+        // 抗拉伸
+        if (self.jk_horizontalHuggingPriority != kJKLayoutPriorityNone) {
+            [self.appliedView setContentHuggingPriority:self.jk_horizontalHuggingPriority forAxis:UILayoutConstraintAxisHorizontal];
+        }
+        
+        if (self.jk_verticalHuggingPriority != kJKLayoutPriorityNone) {
+            [self.appliedView setContentHuggingPriority:self.jk_verticalHuggingPriority forAxis:UILayoutConstraintAxisVertical];
+        }
+        
+        // 抗压缩
+        if (self.jk_horizontalCompressionResistancePriority != kJKLayoutPriorityNone) {
+            [self.appliedView setContentCompressionResistancePriority:self.jk_horizontalCompressionResistancePriority forAxis:UILayoutConstraintAxisHorizontal];
+        }
+        
+        if (self.jk_verticalCompressionResistancePriority != kJKLayoutPriorityNone) {
+            [self.appliedView setContentCompressionResistancePriority:self.jk_verticalCompressionResistancePriority forAxis:UILayoutConstraintAxisVertical];
+        }
+        
+        // normal constraint
         for (JKConstraint *constraint in self.constraints) {
             [constraint jk_install];
         }

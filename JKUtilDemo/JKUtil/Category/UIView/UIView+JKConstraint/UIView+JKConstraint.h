@@ -43,6 +43,14 @@
 @property (nonatomic,strong,readonly) JKConstraint *jk_safeAreaRight API_AVAILABLE(ios(11.0),tvos(11.0));
 @property (nonatomic,strong,readonly) JKConstraint *jk_safeAreaBottom API_AVAILABLE(ios(11.0),tvos(11.0));
 
+// 抗拉伸
+@property (nonatomic,assign) UILayoutPriority jk_horizontalHuggingPriority;
+@property (nonatomic,assign) UILayoutPriority jk_verticalHuggingPriority;
+
+// 抗压缩
+@property (nonatomic,assign) UILayoutPriority jk_horizontalCompressionResistancePriority;
+@property (nonatomic,assign) UILayoutPriority jk_verticalCompressionResistancePriority;
+
 @end
 
 #pragma mark - UIView
